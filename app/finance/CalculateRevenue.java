@@ -9,6 +9,13 @@ public class CalculateRevenue {
 
     public float calculateRevenue(List<Float> revs)
     {
+        float totalRevenue = 0;
 
+        for(float indrev : revs)
+        {
+            totalRevenue += indrev;
+        }
+
+        return totalRevenue;
     }
 }

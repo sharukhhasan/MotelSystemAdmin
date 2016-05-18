@@ -89,6 +89,35 @@ create table users (
   constraint pk_users primary key (id))
 ;
 
+create table guests (
+  id                        bigserial not null,
+  first_name                varchar(255),
+  last_name                 varchar(255),
+  gender                    varchar(255),
+  plate_number              varchar(255),
+  birthdate                 timestamp,
+  constraint pk_guests primary key (id))
+;
+
+create table supplies (
+  id                        bigserial not null,
+  supply_name               varchar(255),
+  supply_quantity           integer,
+  supply_price              integer,
+  supply_restock            boolean,
+  constraint pk_supplies primary key (id))
+;
+
+create table reservations (
+  id                        bigserial not null,
+  guest                     charchar(255),
+  check_in                  timestamp,
+  check_out                 timestamp,
+  room_type                 varchar(255),
+  type_of_stay              varchar(255),
+
+)
+
 alter table address add constraint fk_address_user_1 foreign key (user_id) references users (id);
 create index ix_address_user_1 on address (user_id);
 alter table cart_item add constraint fk_cart_item_cart_2 foreign key (cart_id) references cart (id);

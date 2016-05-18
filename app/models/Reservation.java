@@ -17,7 +17,7 @@ public class Reservation extends Model {
     @GeneratedValue
     public Long id;
 
-    public Guest guest;
+    public String guest;
 
     @Formats.DateTime(pattern = "yyyy-MM-dd")
     public Date check_in;

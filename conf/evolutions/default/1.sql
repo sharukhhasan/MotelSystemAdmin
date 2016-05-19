@@ -41,12 +41,39 @@ create table cart_item (
   constraint pk_cart_item primary key (id))
 ;
 
+create table day (
+  day_date                  timestamp not null,
+  number_of_rooms           integer,
+  revenue_amount            float,
+  supply_orders             integer,
+  constraint pk_day primary key (day_date))
+;
+
 create table email_activation (
   id                        bigserial not null,
   email                     varchar(255),
   token                     varchar(255),
   used                      boolean,
   constraint pk_email_activation primary key (id))
+;
+
+create table guests (
+  id                        bigserial not null,
+  first_name                varchar(255),
+  last_name                 varchar(255),
+  gender                    varchar(255),
+  plate_number              varchar(255),
+  birthdate                 timestamp,
+  constraint pk_guests primary key (id))
+;
+
+create table month (
+  month_value               varchar(255) not null,
+  monthly_revenue           float,
+  monthly_rooms             integer,
+  monthly_supply_orders     integer,
+  monthly_revenue_difference float,
+  constraint pk_month primary key (month_value))
 ;
 
 create table password_resets (
@@ -89,34 +116,14 @@ create table users (
   constraint pk_users primary key (id))
 ;
 
-create table guests (
-  id                        bigserial not null,
-  first_name                varchar(255),
-  last_name                 varchar(255),
-  gender                    varchar(255),
-  plate_number              varchar(255),
-  birthdate                 timestamp,
-  constraint pk_guests primary key (id))
+create table week (
+  week_date                 timestamp not null,
+  weekly_of_revenue         float,
+  weekly_rooms              integer,
+  weekly_supply_orders      integer,
+  weekly_revenue_difference float,
+  constraint pk_week primary key (week_date))
 ;
-
-create table supplies (
-  id                        bigserial not null,
-  supply_name               varchar(255),
-  supply_quantity           integer,
-  supply_price              integer,
-  supply_restock            boolean,
-  constraint pk_supplies primary key (id))
-;
-
-create table reservations (
-  id                        bigserial not null,
-  guest                     charchar(255),
-  check_in                  timestamp,
-  check_out                 timestamp,
-  room_type                 varchar(255),
-  type_of_stay              varchar(255),
-
-)
 
 alter table address add constraint fk_address_user_1 foreign key (user_id) references users (id);
 create index ix_address_user_1 on address (user_id);
@@ -137,11 +144,19 @@ drop table if exists cart cascade;
 
 drop table if exists cart_item cascade;
 
+drop table if exists day cascade;
+
 drop table if exists email_activation cascade;
+
+drop table if exists guests cascade;
+
+drop table if exists month cascade;
 
 drop table if exists password_resets cascade;
 
 drop table if exists products cascade;
 
 drop table if exists users cascade;
+
+drop table if exists week cascade;
 

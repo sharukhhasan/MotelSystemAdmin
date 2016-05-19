@@ -74,7 +74,7 @@
 		   		@for(product <- relatedProducts) {
 		   			"@product.id" : "@product.productPrice",
 		   		}
-			}
+			};
 
 			$(".exchangeForm").change(function() {
 				var total = 0;
@@ -120,11 +120,8 @@
 			   		$("#exchangeButton2").show();
 			   		$("#error").show();
 			   		$("#error").text("Please enter valid amount to exchange");
-			   		
-			   };
-			   
-			   
-			   
+
+}
 		   });
 	   });
 	   </script>

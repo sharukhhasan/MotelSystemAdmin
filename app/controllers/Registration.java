@@ -68,7 +68,7 @@ public class Registration extends Controller {
 		return redirect(controllers.routes.Error.error("Unable to update role"));
 	}
 	
-	public Result updateUser() {
+	/*public Result updateUser() {
 		User u = SessionHandling.getUser();
 		User user = Ebean.find(User.class)
     			.select("*")
@@ -98,7 +98,7 @@ public class Registration extends Controller {
         }
         Ebean.save(address);
         return ok(genericLander.render("SWE-Project - Contact Information Updated", "Your contact information has been updated!"));
-	}
+	}*/
 
     public Result addUser()
     {

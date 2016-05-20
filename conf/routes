@@ -14,7 +14,7 @@ GET		/logout						controllers.Application.logout()
 #POST	/cart						controllers.ShoppingCart.addItems()
 
 #Registration
-#GET		/register					controllers.Registration.register()
+GET		/register					controllers.Registration.register()
 
 #Home
 GET		/home/						controllers.Home.home()

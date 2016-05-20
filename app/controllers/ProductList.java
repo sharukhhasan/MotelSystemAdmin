@@ -1,8 +1,6 @@
 package controllers;
 
-import Util.Constants;
 import com.avaje.ebean.Ebean;
-import models.Product;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;

@@ -1,6 +1,5 @@
 package models.forms;
 
-import models.Product;
 import play.data.validation.Constraints;
 
 import java.text.DateFormat;

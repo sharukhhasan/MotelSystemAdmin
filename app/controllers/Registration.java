@@ -1,18 +1,12 @@
 package controllers;
 
-import play.*;
-
 import java.util.*;
 
 import Util.Encryption;
-import play.mvc.*;
-import models.Cart;
 import models.User;
 import models.EmailActivation;
 import models.AccessCodes;
 import models.forms.UserForm;
-import models.Address;
-import play.data.validation.Constraints;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;

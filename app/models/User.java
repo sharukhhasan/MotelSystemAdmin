@@ -35,16 +35,4 @@ public class User extends Model{
     public Date birthDate;
 
     public String password;
-
-    public Boolean activated = false;
-
-    public Boolean confirm_role = false;
-    
-    @OneToOne(mappedBy = "user")
-    public Address address;
-
-    public static class Manager{
-        public int managerid;
-    }
-
 }

@@ -1,7 +1,6 @@
 package controllers;
 
 import Util.SessionHandling;
-import models.Product;
 import models.User;
 import play.data.Form;
 import play.mvc.Controller;

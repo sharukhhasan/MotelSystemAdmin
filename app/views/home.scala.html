@@ -10,20 +10,12 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        @if(user.role == "admin" && user.confirm_role){
-                            <li><a href="/editusers">Edit Users</a></li>
-                            <li><a href="/pendingroles">Pending Roles</a> </li>
+                        @if(user.role == "admin"){
+                            <li><a href="/viewfinances">View Finances</a></li>
+                            <li><a href="/viewreservationhistory">View Reservation History</a> </li>
                             <li><a href="/addproduct">Add Product</a></li>
                         }
-
-                        @if(user.role == "manager" && user.confirm_role){
-                            <li><a href="/addproduct">Add Product</a></li>
-                        }
-						<li><a href="/updateuser">Update user info</a></li>
-						@if(user.role != "manager" || !user.confirm_role){
-                            <li class="active"><a href="/viewproducts">View Products <span class="sr-only">(current)</span></a></li>
-                        }
-                        <li><a href="/vieworders">View Order History</a></li>
+                        <li><a href="/">View Order History</a></li>
                     </ul>
                 </div>
             </div>
